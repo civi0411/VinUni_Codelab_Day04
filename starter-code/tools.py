@@ -106,18 +106,18 @@ def submit_support_ticket(
 TOOL_DEFINITIONS = [
     {
         "name": "search_product_catalog",
-        "description": "Tra cứu sản phẩm/dịch vụ Vingroup theo danh mục và giá tối đa.",
+        "description": "Search for Vingroup products or services by category and maximum price.",
         "parameters": {
             "type": "object",
             "properties": {
                 "category": {
                     "type": "string",
-                    "description": "Loại sản phẩm: 'xe_dien' hoặc 'du_lich'.",
+                    "description": "Product category: 'xe_dien' (electric vehicles) or 'du_lich' (tourism).",
                     "enum": ["xe_dien", "du_lich"]
                 },
                 "max_price": {
                     "type": "integer",
-                    "description": "Giá tối đa tính bằng VNĐ."
+                    "description": "Maximum price in VND."
                 }
             },
             "required": ["category"]
@@ -125,21 +125,21 @@ TOOL_DEFINITIONS = [
     },
     {
         "name": "submit_support_ticket",
-        "description": "Ghi nhận yêu cầu hỗ trợ của khách hàng vào hệ thống ticket.",
+        "description": "Record a customer's support request into the ticket system.",
         "parameters": {
             "type": "object",
             "properties": {
                 "customer_name": {
                     "type": "string",
-                    "description": "Tên khách hàng."
+                    "description": "The name of the customer."
                 },
                 "issue_description": {
                     "type": "string",
-                    "description": "Mô tả vấn đề cần hỗ trợ."
+                    "description": "Detailed description of the issue or support needed."
                 },
                 "priority": {
                     "type": "string",
-                    "description": "Mức độ ưu tiên ('low', 'medium', 'high'). Mặc định 'medium'.",
+                    "description": "Priority level ('low', 'medium', 'high'). Defaults to 'medium'.",
                     "enum": ["low", "medium", "high"]
                 }
             },
